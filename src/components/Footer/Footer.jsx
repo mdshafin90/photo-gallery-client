@@ -6,7 +6,7 @@ import linkedInIcon from "../../../public/icons/linkedIn.png"
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center rounded-3xl p-10 bg-gradient-to-r from-slate-700 via-rose-700 to-slate-700 text-white">
+        <footer className="footer footer-center rounded-3xl p-10 bg-slate-950 text-white">
             <aside>
                 <Link to='/'>
                     <img className="w-[120px]" src={icon} alt="" />
