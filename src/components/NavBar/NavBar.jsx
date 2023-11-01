@@ -13,7 +13,7 @@ const NavBar = () => {
     )
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center w-full">
             <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 rounded-full my-5 p-2">
                 <div className="navbar-start">
                     <div className="dropdown">
