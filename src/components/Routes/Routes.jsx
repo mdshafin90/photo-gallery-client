@@ -4,6 +4,7 @@ import Home from "../Home/Home/Home";
 import AllPhotos from "../AllPhotos/AllPhotos";
 import AddPhoto from "../AddPhoto/AddPhoto";
 import AboutUs from "../AboutUs/AboutUs";
+import UpdatePhoto from "../UpdatePhoto/UpdatePhoto";
 
 
 const router = createBrowserRouter([
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allPhotos',
-                element: <AllPhotos />
+                element: <AllPhotos />,
+                loader: () => fetch('http://localhost:5000/photos')
             },
             {
                 path: '/addPhoto',
@@ -26,6 +28,11 @@ const router = createBrowserRouter([
             {
                 path: '/aboutUs',
                 element: <AboutUs />
+            },
+            {
+                path: '/updatePhoto/:id',
+                element: <UpdatePhoto />,
+                loader: ({ params }) => fetch(`http://localhost:5000/photos/${params.id}`)
             }
         ]
     },

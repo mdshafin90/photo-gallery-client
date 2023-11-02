@@ -12,11 +12,11 @@ const Home = () => {
     // };
 
     return (
-        <div className="mt-40">
+        <div>
             <Helmet>
                 <title>Fruit Gallery | Home</title>
             </Helmet>
-            <h1>This is home component</h1>
+            <h1 className="text-5xl text-center font-bold my-5 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Welcome to our Fruit Gallery</h1>
             {/* <div className="flex items-center justify-evenly w-full">
                 <div>
                     <img className="w-[120px]" src={navIcon} alt="" />
