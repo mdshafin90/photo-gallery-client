@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import navIcon from "../../../public/nav-icon.png"
+import ImageUploader from "../Home/ImageUploader/ImageUploader";
 
 const NavBar = () => {
 
@@ -34,7 +35,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <button className="btn btn-outline btn-info btn-md">Sign In</button>
                 </div>
             </div>
         </div>
