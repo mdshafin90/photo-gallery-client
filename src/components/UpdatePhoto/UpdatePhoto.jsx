@@ -27,7 +27,7 @@ const UpdatePhoto = () => {
             denyButtonText: `Don't save`,
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/photos/${_id}`, {
+                fetch(`https://photo-gallery-server-q5l2lrg96-mdshafin90.vercel.app/photos/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
@@ -96,7 +96,7 @@ const UpdatePhoto = () => {
                         </div>
                     </div>
                     <div className="flex justify-center mt-8">
-                        <button className="bg-slate-800 w-1/2 shadow-2xl px-3 py-2 rounded text-lg font-medium text-white bg-gradient-to-r from-orange-500 via-rose-600 to-orange-500 hover:-translate-y-1 transform duration-500">Add a Fruit</button>
+                        <button className="bg-slate-800 w-1/2 shadow-2xl px-3 py-2 rounded text-lg font-medium text-white bg-gradient-to-r from-orange-500 via-rose-600 to-orange-500 hover:-translate-y-1 transform duration-500">Update Fruit</button>
                     </div>
                 </form>
             </div>

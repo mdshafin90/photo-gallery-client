@@ -16,8 +16,8 @@ const Footer = () => {
             <nav>
                 <p className="text-xl font-medium">Follow Us On</p>
                 <div className="grid grid-flow-col gap-4">
-                    <Link><img className="w-[40px]" src={facebookIcon} alt="" /></Link>
-                    <Link><img className="w-[40px]" src={linkedInIcon} alt="" /></Link>
+                    <Link to='https://www.facebook.com/slice.coders' target="blank"><img className="w-[40px]" src={facebookIcon} alt="" /></Link>
+                    <Link to='https://www.linkedin.com/company/slice-coders/' target="blank"><img className="w-[40px]" src={linkedInIcon} alt="" /></Link>
                 </div>
             </nav>
             <p className="text-lg font-medium">Copyright © {moment().format("YYYY")} - All right reserved</p>

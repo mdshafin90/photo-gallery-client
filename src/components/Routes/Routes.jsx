@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             {
                 path: '/allPhotos',
                 element: <AllPhotos />,
-                loader: () => fetch('http://localhost:5000/photos')
+                loader: () => fetch('https://photo-gallery-server-q5l2lrg96-mdshafin90.vercel.app/photos')
             },
             {
                 path: '/addPhoto',
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatePhoto/:id',
                 element: <UpdatePhoto />,
-                loader: ({ params }) => fetch(`http://localhost:5000/photos/${params.id}`)
+                loader: ({ params }) => fetch(`https://photo-gallery-server-q5l2lrg96-mdshafin90.vercel.app/photos/${params.id}`)
             }
         ]
     },
