@@ -15,7 +15,7 @@ const AddPhoto = () => {
         // console.log(newFruit);
 
         // to send data on mongodb by using server
-        fetch('https://photo-gallery-server-q5l2lrg96-mdshafin90.vercel.app/photos', {
+        fetch('https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

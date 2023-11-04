@@ -27,7 +27,7 @@ const UpdatePhoto = () => {
             denyButtonText: `Don't save`,
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://photo-gallery-server-q5l2lrg96-mdshafin90.vercel.app/photos/${_id}`, {
+                fetch(`https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

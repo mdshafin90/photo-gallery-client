@@ -21,7 +21,7 @@ const PhotoCard = ({ fruit, fruits, setFruits }) => {
             confirmButtonText: 'Yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://photo-gallery-server-q5l2lrg96-mdshafin90.vercel.app/photos/${_id}`, {
+                fetch(`https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

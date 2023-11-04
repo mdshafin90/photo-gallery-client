@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import navIcon from "../../../public/nav-icon.png"
-import ImageUploader from "../Home/ImageUploader/ImageUploader";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
 
 const NavBar = () => {
+
+    const { user, logOutUser } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOutUser()
+            .then(result => {
+                console.log(result)
+            })
+            .then(error => {
+                console.log(error)
+            })
+    }
+
 
     const navLinks = (
         <>
@@ -15,7 +29,7 @@ const NavBar = () => {
 
     return (
         <div className="flex justify-center w-full">
-            <div className="navbar bg-slate-700 px-5 rounded-full my-5 p-2">
+            <div className="navbar bg-slate-700 px-5 rounded-full my-5 py-5 md:py-0 p-2">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,7 +49,22 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-outline btn-info btn-md">Sign In</button>
+                    <div className="flex flex-col text-white justify-center items-end space-y-2 md:flex-row md:justify-center md:items-center">
+                        {
+                            user ?
+                                <>
+                                    <p className='font-bold text-sm md:text-lg mr-3'>Hello</p>
+                                    <div className="tooltip tooltip-left tooltip-info" data-tip={user?.displayName}>
+                                        <img src={user?.photoURL} className='rounded-full w-14 mx-3' alt="" />
+                                    </div>
+                                    <p onClick={handleLogOut} className="btn btn-outline btn-info btn-sm md:btn-md">Log Out</p>
+                                </>
+                                :
+                                <Link to='/login'>
+                                    <button className="btn btn-outline btn-info btn-sm md:btn-md">Sign In</button>
+                                </Link>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
