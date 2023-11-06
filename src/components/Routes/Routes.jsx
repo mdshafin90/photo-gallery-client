@@ -8,6 +8,7 @@ import UpdatePhoto from "../UpdatePhoto/UpdatePhoto";
 import Login from "../Login/Login/Login";
 import Register from "../Login/Register/Register";
 import PhotoDetails from "../AllPhotos/PhotoDetails";
+import PageError from "../PageError/PageError";
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/*',
+        element: <PageError />
+    }
 ]);
 
 export default router;
