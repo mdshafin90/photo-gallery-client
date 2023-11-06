@@ -1,5 +1,8 @@
 import Swal from "sweetalert2";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const AddPhoto = () => {
 
@@ -15,7 +18,7 @@ const AddPhoto = () => {
         // console.log(newFruit);
 
         // to send data on mongodb by using server
-        fetch('https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos', {
+        fetch('http://localhost:4000/photos', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,13 +47,13 @@ const AddPhoto = () => {
                 <form onSubmit={handleAddFruit}>
                     {/* fruit name and fruit taste row */}
                     <div className="flex flex-col md:flex-row lg:flex-row w-full space-x-0 space-y-4 md:space-y-0 md:space-x-3">
-                        <div className="form-control w-full md:w-1/2">
+                        <div data-aos="fade-left" data-aos-duration="1000" className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold text-white">Fruit Name</span>
                             </label>
                             <input type="text" name="fruitName" placeholder="enter a fruit name" className="input input-bordered" required />
                         </div>
-                        <div className="form-control w-full md:w-1/2">
+                        <div data-aos="fade-right" data-aos-duration="1000" className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold text-white">Taste</span>
                             </label>
@@ -60,13 +63,13 @@ const AddPhoto = () => {
 
                     {/* fruit type and fruit rating row */}
                     <div className="flex flex-col md:flex-row lg:flex-row my-4 w-full space-x-0 space-y-4 md:space-y-0 md:space-x-3">
-                        <div className="form-control w-full md:w-1/2">
+                        <div data-aos="fade-left" data-aos-duration="1000" className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold text-white">Fruit Type</span>
                             </label>
                             <input type="text" name="fruitType" placeholder="enter type of fruit like awesome, good, average" className="input input-bordered" required />
                         </div>
-                        <div className="form-control w-full md:w-1/2">
+                        <div data-aos="fade-right" data-aos-duration="1000" className="form-control w-full md:w-1/2">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold text-white">Fruit Rating</span>
                             </label>
@@ -75,7 +78,7 @@ const AddPhoto = () => {
                     </div>
                     {/* fruit image url */}
                     <div className="flex flex-col md:flex-row lg:flex-row w-full space-x-0 space-y-4 md:space-y-0 md:space-x-3">
-                        <div className="form-control w-full">
+                        <div data-aos="fade-up" data-aos-duration="1000" className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold text-white">Photo URL</span>
                             </label>

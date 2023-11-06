@@ -7,6 +7,7 @@ import AboutUs from "../AboutUs/AboutUs";
 import UpdatePhoto from "../UpdatePhoto/UpdatePhoto";
 import Login from "../Login/Login/Login";
 import Register from "../Login/Register/Register";
+import PhotoDetails from "../AllPhotos/PhotoDetails";
 
 
 const router = createBrowserRouter([
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: '/allPhotos',
                 element: <AllPhotos />,
-                loader: () => fetch('https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos')
+                loader: () => fetch('http://localhost:4000/photos')
             },
             {
                 path: '/addPhoto',
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatePhoto/:id',
                 element: <UpdatePhoto />,
-                loader: ({ params }) => fetch(`https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:4000/photos/${params.id}`)
             },
             {
                 path: '/login',
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/photoDetails/:id',
+                element: <PhotoDetails />,
+                loader: ({ params }) => fetch(`http://localhost:4000/photos/${params.id}`)
             }
         ]
     },

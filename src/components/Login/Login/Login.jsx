@@ -7,6 +7,10 @@ import { AuthContext } from "../../providers/AuthProviders";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import Lottie from "lottie-react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Login = () => {
 
@@ -63,11 +67,11 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
-                    <div className="w-[200px] md:w-[400px]">
+                    <div data-aos="zoom-in" data-aos-duration="1000" className="w-[200px] md:w-[400px]">
                         <Lottie animationData={loginAnimation} loop={true} />
                     </div>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div data-aos="fade-up" data-aos-duration="1000" className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form className="card-body" onSubmit={handleLogin}>
                         <div className="form-control">
                             <label className="label">

@@ -21,7 +21,7 @@ const PhotoCard = ({ fruit, fruits, setFruits }) => {
             confirmButtonText: 'Yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://photo-gallery-server-dridvd806-mdshafin90.vercel.app/photos/${_id}`, {
+                fetch(`http://localhost:4000/photos/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -43,8 +43,8 @@ const PhotoCard = ({ fruit, fruits, setFruits }) => {
 
     return (
         <div className="my-5">
-            <div className="card w-96 bg-base-100 shadow-2xl hover:shadow-blue-500 transition-transform hover:scale-105 duration-500">
-                <figure><img className="h-[300px]" src={fruitPhoto} alt="Shoes" /></figure>
+            <div className="card w-72 md:w-80 lg:w-96 bg-base-100 shadow-2xl hover:shadow-blue-500 transition-transform hover:scale-105 duration-500">
+                <figure><img className="h-[200px] md:h-[300px]" src={fruitPhoto} alt="Shoes" /></figure>
                 <div className="card-body my-3">
                     <h2 className="card-title text-2xl">{fruitName}</h2>
                     <p className="text-lg">Taste: {fruitTaste}</p>
@@ -52,7 +52,7 @@ const PhotoCard = ({ fruit, fruits, setFruits }) => {
                     <p className="text-lg">Rating: {fruitRating}</p>
                     <div className="card-actions justify-evenly mt-3">
                         <button className="bg-slate-800 shadow-2xl px-3 py-2 rounded font-bold text-white bg-gradient-to-r from-rose-500 to-orange-600 hover:-translate-y-1 transform duration-500">
-                            <Link className="flex justify-center items-center" to={`/cardetails/${_id}`}>Details <BsFillArrowRightCircleFill className="ml-2" /></Link>
+                            <Link className="flex justify-center items-center" to={`/photoDetails/${_id}`}>Details <BsFillArrowRightCircleFill className="ml-2" /></Link>
                         </button>
                         <button className="bg-slate-800 shadow-2xl px-3 py-2 rounded font-bold text-white bg-gradient-to-r from-rose-500 to-orange-600 hover:-translate-y-1 transform duration-500">
                             <Link className="flex items-center justify-center" to={`/updatePhoto/${_id}`}> <GrUpdate className="mr-2" /> Update</Link>

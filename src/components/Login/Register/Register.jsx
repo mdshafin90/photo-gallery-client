@@ -6,6 +6,10 @@ import { Helmet } from "react-helmet-async";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import registrationAnimation from '../../../../public/registration-animation.json'
 import Lottie from "lottie-react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Register = () => {
 
@@ -54,13 +58,13 @@ const Register = () => {
                 <title>Photo Gallery | Register</title>
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
+                <div data-aos="fade-left" data-aos-duration="1000" className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
                     <div className="w-[200px] md:w-[400px]">
                         <Lottie animationData={registrationAnimation} loop={true} />
                     </div>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div data-aos="fade-right" data-aos-duration="1000" className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
