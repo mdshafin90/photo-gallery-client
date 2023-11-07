@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Helmet } from "react-helmet-async";
 // ..
 AOS.init();
 
@@ -42,6 +43,9 @@ const AddPhoto = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Fruit Gallery | Add Photo</title>
+            </Helmet>
             <h1 className="text-4xl font-bold text-center my-4">Add a Fruit 🥝</h1>
             <div className="w-full md:w-4/5 mx-auto my-10 bg-gradient-to-r from-slate-700 to-slate-500 p-4 rounded shadow-2xl">
                 <form onSubmit={handleAddFruit}>

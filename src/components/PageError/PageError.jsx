@@ -2,10 +2,14 @@ import Lottie from 'lottie-react';
 import pageErrorAnimation from '../../../public/page-error.json'
 import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const PageError = () => {
     return (
         <div>
+            <Helmet>
+                <title>Fruit Gallery | 404-Page</title>
+            </Helmet>
             <div className="w-[300px] md:w-[600px] rounded-lg flex justify-center mx-auto mt-10">
                 <Lottie animationData={pageErrorAnimation} loop={true} />
             </div>

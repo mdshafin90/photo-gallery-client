@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -9,6 +10,9 @@ const PhotoDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Fruit Gallery | Photo Details</title>
+            </Helmet>
             <h1 className="text-center font-bold text-3xl my-7">Details about this fruit: {fruitName}</h1>
             <div className="flex flex-col items-center md:flex-row md:items-center md:justify-evenly md:border-y-4 md:border-blue-700 rounded-2xl md:rounded-full p-2 md:p-4 my-4 md:my-10 space-y-4 md:space-y-0">
                 <div>

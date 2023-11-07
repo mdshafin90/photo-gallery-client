@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import PhotoCard from "./PhotoCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const AllPhotos = () => {
@@ -11,6 +12,9 @@ const AllPhotos = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Fruit Gallery | All Photos</title>
+            </Helmet>
             <div className="flex justify-center mt-5">
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-800 via-rose-600 to-slate-800 inline-block text-transparent bg-clip-text" > Here is Our All Fruits: {fruits.length}</h1>
             </div>

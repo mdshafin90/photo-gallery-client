@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -50,6 +51,9 @@ const UpdatePhoto = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Fruit Gallery | Update Photo</title>
+            </Helmet>
             <div className="flex justify-center">
                 <h1 className="text-4xl font-bold text-center my-4 bg-gradient-to-r from-orange-700 via-rose-500 to-blue-500 inline-block text-transparent bg-clip-text">Update a Fruit: {fruitName} 🤟</h1>
             </div>
